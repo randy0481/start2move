@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "Start2Move Blog | Fitness & Leefstijl",
+    "base_url": "https://start2move.nl",
+    "base_path": "/blog",
+    "trailing_slash": false,
+    "favicon": "/blog/images/favicon.png",
+    "logo": "/blog/images/logo.png",
+    "logo_width": "200",
+    "logo_height": "34",
+    "logo_text": "Start2Move Blog"
+  },
+
+  "settings": {
+    "pagination": 8,
+    "summary_length": 160
+  },
+
+  "metadata": {
+    "meta_author": "Start2Move Team",
+    "meta_image": "/blog/images/og-image.png",
+    "meta_description": "Start2Move blog provides resources, tips, and insights on fitness, movement, and healthy living for everyone looking to improve their physical and mental wellbeing."
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2025 [Start2Move](https://start2move.nl)"
+  },
+
+  "contactinfo": {
+    "email": "info@start2move.nl",
+    "website": "https://start2move.nl"
+  }
+}

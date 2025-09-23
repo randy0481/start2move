@@ -1,0 +1,77 @@
+---
+import { findRelatedPosts } from "@/lib/utils/autoInterlinking";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { Image } from "astro:assets";
+
+interface PostData {
+  title: string;
+  categories: string[];
+  tags: string[];
+  description?: string;
+  image?: any;
+}
+
+// Update Post interface to match Astro's content collection structure
+interface Post {
+  id: string;
+  data: PostData;
+  collection: string;
+}
+
+export interface Props {
+  currentPost: Post;
+  showImages?: boolean;
+  maxPosts?: number;
+  title?: string;
+  className?: string;
+}
+
+const { 
+  currentPost, 
+  showImages = true, 
+  maxPosts = 3, 
+  title = "Related Articles", 
+  className = "mt-8 p-4 bg-light rounded-lg" 
+} = Astro.props;
+
+// Get all posts
+const posts = await getSinglePage("posts");
+
+// Find related posts using our custom algorithm
+const relatedPosts = findRelatedPosts(currentPost, posts, maxPosts);
+---
+
+{relatedPosts.length > 0 && (
+  <div class={className}>
+    <h3 class="h5 mb-4">{title}</h3>
+    <ul class="pl-0 list-none">
+      {relatedPosts.map((post) => (
+        <li class="mb-4 pb-4 border-b border-border last:border-0 last:pb-0">
+          <div class="flex gap-4 items-start">
+            {showImages && post.data.image && (
+              <a href={`/posts/${post.id}`} class="shrink-0">
+                <Image
+                  src={post.data.image}
+                  alt={post.data.title}
+                  width={100}
+                  height={70}
+                  class="rounded object-cover w-[100px] h-[70px]"
+                />
+              </a>
+            )}
+            <div>
+              <h4 class="h6 mb-1">
+                <a href={`/posts/${post.id}`} class="block hover:text-primary transition duration-300">
+                  {post.data.title}
+                </a>
+              </h4>
+              {post.data.description && (
+                <p class="text-sm text-gray-600 line-clamp-2">{post.data.description}</p>
+              )}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

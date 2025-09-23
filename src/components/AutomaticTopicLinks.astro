@@ -1,0 +1,56 @@
+---
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { slugify } from "@/lib/utils/textConverter";
+
+// Props
+export interface Props {
+  content: string;
+  currentSlug: string;
+  maxLinks?: number;
+}
+
+const { content, currentSlug, maxLinks = 5 } = Astro.props;
+
+// Get all posts
+const posts = await getSinglePage("posts");
+
+// Function to escape special characters in a string for use in a regex
+function escapeRegExp(string: string): string {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Filter out the current post and sort by title length (descending)
+const otherPosts = posts
+  .filter(post => post.id !== currentSlug)
+  .sort((a, b) => b.data.title.length - a.data.title.length);
+
+// Process content to add automatic links
+let processedContent = content;
+let linksAdded = 0;
+
+for (const post of otherPosts) {
+  if (linksAdded >= maxLinks) break;
+  
+  const postTitle = post.data.title;
+  const postSlug = post.id;
+  
+  // Create a regex that matches the title but not if it's already in a link
+  const titleRegex = new RegExp(
+    `(?<!href=["'][^"']*)(${escapeRegExp(postTitle)})(?![^<]*<\/a>)`,
+    'i'
+  );
+  
+  // Check if the title appears in the content and is not already linked
+  if (titleRegex.test(processedContent)) {
+    // Replace only the first occurrence
+    processedContent = processedContent.replace(
+      titleRegex,
+      `<a href="/posts/${postSlug}" class="text-primary hover:underline">$1</a>`
+    );
+    linksAdded++;
+  }
+}
+---
+
+<!-- Output the processed content -->
+<Fragment set:html={processedContent} />
