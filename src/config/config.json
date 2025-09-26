@@ -1,11 +1,11 @@
 {
   "site": {
     "title": "Start2Move Blog | Fitness & Leefstijl",
-    "base_url": "https://start2move.nl",
+    "base_url": "https://start2move.nl/blog",
     "base_path": "/blog",
     "trailing_slash": false,
-    "favicon": "/blog/images/favicon.png",
-    "logo": "/blog/images/logo.png",
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "34",
     "logo_text": "Start2Move Blog"

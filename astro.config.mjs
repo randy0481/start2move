@@ -19,13 +19,19 @@ async function getHighlighter() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "https://start2move.nl",
-  base: config.site.base_path ? config.site.base_path : "/blog",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
-  vite: { plugins: [tailwindcss()] },
+  site: "https://start2move.nl",
+  base: "/blog",
+  trailingSlash: "never",
+  vite: { 
+    plugins: [tailwindcss()],
+    base: '/blog/'
+  },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      customPages: ['https://start2move.nl/blog'],
+      entryLimit: 10000
+    }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",

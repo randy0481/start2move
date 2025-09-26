@@ -6,15 +6,15 @@
     },
     {
       "name": "Blog",
-      "url": "/"
+      "url": "/blog"
     },
     {
-      "name": "Categoriëen",
-      "url": "/categories"
+      "name": "Categorieën",
+      "url": "/blog/categories"
     },
     {
       "name": "Auteurs",
-      "url": "/authors/koen-bakker"
+      "url": "/blog/authors/koen-bakker"
     }
   ]
 }
