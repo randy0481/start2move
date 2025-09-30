@@ -21,13 +21,19 @@ const {
   {
     src || logo ? (
       <Image
-        width={logo_width.replace("px", "") * 2}
-        height={logo_height.replace("px", "") * 2}
-        src={src ? src : logo}
+        src={src || logo}
         alt={title}
+        widths={[200, 300, 400]}
+        sizes="(max-width: 640px) 200px, 300px"
+        loading="eager"
+        fetchpriority="high"
+        quality={80}
+        format="webp"
+        width={Number(logo_width.replace("px", ""))}
+        height={Number(logo_height.replace("px", ""))}
         style={{
-          height: logo_height.replace("px", "") + "px",
-          width: logo_width.replace("px", "") + "px",
+          height: logo_height,
+          width: logo_width,
         }}
       />
     ) : logo_text ? (

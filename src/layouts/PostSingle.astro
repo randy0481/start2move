@@ -87,10 +87,15 @@ const { title, description, authors, categories, image, date, tags } = post.data
           image && (
             <Image
               src={image}
-              height={500}
-              width={1000}
               alt={title}
-              class="rounded-lg"
+              widths={[400, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 800px"
+              loading="lazy"
+              quality={85}
+              format="webp"
+              width={1000}
+              height={500}
+              class="rounded-lg w-full h-auto"
             />
           )
         }
@@ -107,7 +112,7 @@ const { title, description, authors, categories, image, date, tags } = post.data
               tags.map((tag: string) => (
                 <li class="inline-block">
                   <a
-                    href={`/tags/${slugify(tag)}`}
+                    href={`/blog/tags/${slugify(tag)}`}
                     class="block rounded-lg bg-light px-4 py-2 font-semibold text-dark text-sm hover:text-primary transition duration-300"
                   >
                     #{humanize(tag)}
