@@ -1,0 +1,22 @@
+/* Cross-browser compatibility fixes */
+
+/* Force image display to be consistent */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix for Chrome image rendering */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  img[src^="/blog/"] {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Ensure proper path resolution for assets in different browsers */
+[src^="/images/"],
+[href^="/images/"] {
+  content: attr(src);
+  content: "/blog" attr(src);
+}

@@ -21,10 +21,14 @@ async function getHighlighter() {
 export default defineConfig({
   site: "https://start2move.nl",
   base: "/blog",
-  trailingSlash: "never",
+  trailingSlash: "always",
   vite: { 
     plugins: [tailwindcss()],
-    base: '/blog/'
+    base: '/blog/',
+    build: {
+      assetsInlineLimit: 0,
+      cssCodeSplit: false
+    }
   },
   integrations: [
     react(),
