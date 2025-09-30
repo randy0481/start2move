@@ -3,7 +3,7 @@ title: "Personal trainer worden? Dit moet je weten"
 meta_title: "Hoe kan je de beste personal trainer worden? "
 description: "Personal trainer worden? Zo kies jij de opleiding die écht bij je past"
 date: 2025-09-26T05:00:00Z
-image: "/blog/images/posts/personal-trainer-worden.jpg"
+image: "/blog/images/posts/personal-trainer-worden.webp"
 categories: ["personal trainer opleiding"]
 authors: ["koen-bakker"]
 tags: ["personal trainer opleiding", "personal trainer worden"]

@@ -1,7 +1,7 @@
 ---
 title: Koen Bakker
 meta_title: "Gediplomeerd Fitness & Bootcamp Trainer | MSc Bewegingswetenschappen"
-image: /blog/images/authors/koen-bakker.png
+image: /blog/images/authors/koen-bakker.webp
 description: "Koen Bakker is een erkend bewegings- en voedingsdeskundige met meer dan 20 jaar ervaring in de fitnessbranche en een Master in Bewegingswetenschappen van de Vrije Universiteit Amsterdam."
 social:
   facebook: https://www.facebook.com/start2move

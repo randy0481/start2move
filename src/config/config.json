@@ -4,8 +4,8 @@
     "base_url": "https://start2move.nl/blog",
     "base_path": "/blog",
     "trailing_slash": false,
-    "favicon": "/blog/images/favicon.png",
-    "logo": "/blog/images/logo.png",
+    "favicon": "/blog/images/favicon.webp",
+    "logo": "/blog/images/logo.webp",
     "logo_width": "200",
     "logo_height": "34",
     "logo_text": "Start2Move Blog"
@@ -18,7 +18,7 @@
 
   "metadata": {
     "meta_author": "Start2Move Team",
-    "meta_image": "/blog/images/og-image.png",
+    "meta_image": "/blog/images/og-image.webp",
     "meta_description": "Start2Move blog provides resources, tips, and insights on fitness, movement, and healthy living for everyone looking to improve their physical and mental wellbeing."
   },
 
