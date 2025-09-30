@@ -30,19 +30,17 @@ const { className, posts, fluid } = Astro.props;
             class="rounded-lg block hover:text-primary overflow-hidden group"
           >
             <Image
-              class="group-hover:scale-[1.03] transition duration-300 w-full"
+              class="group-hover:scale-[1.03] transition duration-300 w-full h-auto"
               src={post.data.image}
               alt={post.data.title}
-              widths={i === 0 ? [400, 800, 1200] : [300, 600, 900]}
-              sizes={i === 0 
-                ? '(max-width: 768px) 100vw, 800px' 
-                : '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px'}
+              widths={[380, 600, 800, 1200]}
+              sizes="(max-width: 640px) 95vw, (max-width: 1024px) 50vw, 600px"
               loading={i === 0 ? 'eager' : 'lazy'}
               fetchpriority={i === 0 ? 'high' : 'auto'}
-              quality={80}
+              quality={75}
               format="webp"
-              width={i === 0 ? 925 : 445}
-              height={i === 0 ? 475 : 230}
+              width={i === 0 ? 800 : 600}
+              height={i === 0 ? 533 : 400}
             />
           </a>
         )}
@@ -60,15 +58,14 @@ const { className, posts, fluid } = Astro.props;
                   class="flex items-center hover:text-primary font-medium"
                 >
                   {author.data.image && (
-                    <Image
+                    <img
                       src={author.data.image}
                       alt={author.data.title}
-                      width={48}
-                      height={48}
-                      class="mr-2 h-6 w-6 rounded-full"
+                      width={24}
+                      height={24}
+                      class="mr-2 h-6 w-6 rounded-full object-cover"
                       loading="lazy"
-                      quality={60}
-                      format="webp"
+                      decoding="async"
                     />
                   )}
                   <span>{author.data.title}</span>
