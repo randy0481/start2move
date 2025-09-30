@@ -3,7 +3,7 @@ title: "Beste Personal Trainer Opleiding: Waar moet je in 2025 op letten?"
 meta_title: "Hoe kies je de beste personal trainer opleiding? "
 description: "Wat is de beste personal trainer opleiding? Zo kies jij de opleiding die écht bij je past"
 date: 2025-09-26T05:00:00Z
-image: "/public/images/posts/beste-personal-trainer-opleiding.png"
+image: "/blog/images/posts/beste-personal-trainer-opleiding.png"
 categories: ["personal trainer opleiding"]
 authors: ["koen-bakker"]
 tags: ["personal trainer opleiding", "beste personal trainer opleiding"]
