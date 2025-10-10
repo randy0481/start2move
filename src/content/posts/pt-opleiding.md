@@ -2,7 +2,7 @@
 title: "PT Opleiding: Alles wat je moet weten in 2025"
 meta_title: "Hoe kies je de beste PT opleiding? "
 description: "Wat is de beste PT opleiding? Zo kies jij de opleiding die écht bij je past"
-date: 2025-09-26T05:00:00Z
+date: 2025-10-10T05:00:00Z
 image: "/blog/images/posts/pt-opleiding.webp"
 categories: ["personal trainer opleiding"]
 authors: ["koen-bakker"]
